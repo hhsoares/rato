@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://0u2uwrmucc4m"]
+
+[ext_resource type="Script" uid="uid://bdrube0djq8ob" path="res://cauldron.gd" id="1_v7emq"]
+[ext_resource type="Texture2D" uid="uid://ch08x5rohgrn3" path="res://assets/caldeirao vazio.png" id="1_x11kc"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_jgyxs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7emq"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aokaj"]
+radius = 22.0
+
+[node name="Cauldron" type="StaticBody2D"]
+script = ExtResource("1_v7emq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_x11kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v7emq")
+
+[node name="Interactable" parent="." instance=ExtResource("2_jgyxs")]
+interact_name = "Mix Cauldron"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_aokaj")
