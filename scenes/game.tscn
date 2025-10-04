@@ -9,3 +9,6 @@
 
 [node name="Cauldron" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(49, 31)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
