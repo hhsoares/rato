@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://r30jccqmbdpo"]
+[gd_scene load_steps=3 format=3 uid="uid://r30jccqmbdpo"]
 
 [ext_resource type="PackedScene" uid="uid://cuxvjsd21fvy4" path="res://prefabs/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://0u2uwrmucc4m" path="res://prefabs/cauldron.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="Cauldron" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(49, 31)
