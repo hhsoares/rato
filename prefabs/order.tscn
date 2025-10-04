@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr2ririg8njbb"]
+[gd_scene load_steps=6 format=3 uid="uid://cr2ririg8njbb"]
 
-[ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="1_ec1jw"]
 [ext_resource type="Script" uid="uid://crbe7fmenvtdr" path="res://scripts/order.gd" id="1_lgbgi"]
 
 [sub_resource type="Theme" id="Theme_lgbgi"]
@@ -16,7 +15,7 @@ bg_color = Color(0.17828125, 0.7056299, 0.4412397, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_crgry")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_k3hqx")
 
-[node name="Order" type="Control" node_paths=PackedStringArray("order_timer")]
+[node name="Order" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +23,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lgbgi")
-order_timer = NodePath("PaperSheet/OrderTimer")
 
 [node name="PaperSheet" type="ColorRect" parent="."]
 layout_mode = 0
@@ -50,16 +48,11 @@ layout_mode = 2
 theme = SubResource("Theme_lgbgi")
 text = "Sopa "
 
-[node name="IngredientImage" type="TextureRect" parent="PaperSheet/VBoxContainer"]
+[node name="IngredientsBox" type="HBoxContainer" parent="PaperSheet/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_ec1jw")
 
-[node name="OrderTimer" type="ProgressBar" parent="PaperSheet"]
-layout_mode = 0
-offset_left = 38.5
-offset_top = 215.0
-offset_right = 166.5
-offset_bottom = 223.0
+[node name="OrderTimer" type="ProgressBar" parent="PaperSheet/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_f4lm0")
 fill_mode = 1
 show_percentage = false
