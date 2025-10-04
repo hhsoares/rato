@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0qesh47gosqt"]
+
+[ext_resource type="Script" uid="uid://cg47r6auqohee" path="res://scripts/order system/order_manager.gd" id="1_0kf0r"]
+
+[node name="Main" type="Node2D"]
+
+[node name="OrderManager" type="Node2D" parent="."]
+script = ExtResource("1_0kf0r")
+spawn_interval = 3.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

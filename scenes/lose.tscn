@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cisdp07dngph4"]
 
-[ext_resource type="Script" uid="uid://bks8ec1f3b8mu" path="res://scripts/lose.gd" id="1_vjdtf"]
+[ext_resource type="Script" uid="uid://bks8ec1f3b8mu" path="res://scripts/script scenes/lose.gd" id="1_vjdtf"]
 
 [node name="Lose" type="Control"]
 layout_mode = 3

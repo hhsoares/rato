@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr2ririg8njbb"]
 
-[ext_resource type="Script" uid="uid://crbe7fmenvtdr" path="res://scripts/order.gd" id="1_lgbgi"]
+[ext_resource type="Script" uid="uid://crbe7fmenvtdr" path="res://scripts/order system/order.gd" id="1_lgbgi"]
 
 [sub_resource type="Theme" id="Theme_lgbgi"]
 Label/colors/font_color = Color(0, 0, 0, 1)
