@@ -26,10 +26,10 @@ var order_ui_scene = preload("res://prefabs/order.tscn")
 var active_orders = []
 
 # Interval between generating new orders
-@export var spawn_interval: float = 5.0
+@export var spawn_interval: float = 10.0
 
 # Container in the HUD where OrderUIs are added
-@onready var orders_container : VBoxContainer = $OrdersContainer
+@onready var orders_container : HBoxContainer = $"../UI/HBoxContainer"
 
 func _ready() -> void:
 	# Start a timer to spawn orders periodically
