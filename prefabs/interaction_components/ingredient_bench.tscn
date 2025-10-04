@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxs3op85e563c"]
+[gd_scene load_steps=7 format=3 uid="uid://bxs3op85e563c"]
 
 [ext_resource type="Script" uid="uid://cg32kq48ex4j" path="res://scripts/interaction_components/ingredient_bench.gd" id="1_m1yk4"]
 [ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="2_m3yr7"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="3_m3yr7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lg420"]
 animations = [{
@@ -16,6 +17,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l33s4"]
 size = Vector2(21.333334, 21.333334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg420"]
+size = Vector2(228, 208)
 
 [node name="IngredientBench" type="StaticBody2D" node_paths=PackedStringArray("ingredient_quantity_label")]
 script = ExtResource("1_m1yk4")
@@ -44,3 +48,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 text = "3/3"
 horizontal_alignment = 1
+
+[node name="Interactable" parent="." instance=ExtResource("3_m3yr7")]
+interact_name = "dsasdsdsd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_lg420")
