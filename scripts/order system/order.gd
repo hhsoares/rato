@@ -18,7 +18,7 @@ var ingredient_icons = {
 func set_order(order: Dictionary) -> void:
 	order_data = order
 	max_time = order["data"]["time_limit"]
-	
+	print_debug("Soup Label: ", soup_label)
 	# Update soup name
 	soup_label.text = order["data"]["name"]
 	
