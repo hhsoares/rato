@@ -58,8 +58,9 @@ func generate_order() -> void:
 	
 	# Instantiate OrderUI for this order
 	var order_ui = order_ui_scene.instantiate()
-	order_ui.set_order(order)
 	orders_container.add_child(order_ui)
+	await order_ui.ready
+	order_ui.set_order(order)
 
 func validate_delivery(player_plate: Array) -> bool:
 	# Check if the delivered ingredients match any active order
