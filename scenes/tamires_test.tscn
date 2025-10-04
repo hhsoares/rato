@@ -6,7 +6,7 @@
 
 [node name="OrderManager" type="Node2D" parent="."]
 script = ExtResource("1_0kf0r")
-spawn_interval = 3.0
+spawn_interval = 1.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -18,3 +18,4 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 80
