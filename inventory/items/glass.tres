@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dbdiajeykhmgq"]
+
+[ext_resource type="Script" uid="uid://caq5bo58ddlxj" path="res://scripts/player/inventory/inventory_item.gd" id="1_0gka2"]
+[ext_resource type="Texture2D" uid="uid://c2s5qjd71phkw" path="res://assets/tileset and scenario/CACO DE VRIDO.png" id="2_5c1h4"]
+
+[resource]
+script = ExtResource("1_0gka2")
+name = "glass"
+texture = ExtResource("2_5c1h4")
+metadata/_custom_type_script = "uid://caq5bo58ddlxj"

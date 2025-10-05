@@ -1,27 +1,116 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuxvjsd21fvy4"]
+[gd_scene load_steps=23 format=3 uid="uid://cuxvjsd21fvy4"]
 
-[ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c6pxpobrm6pm8" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Resource" uid="uid://30e64c78axyk" path="res://inventory/playerinv.tres" id="2_kbsxf"]
+[ext_resource type="Texture2D" uid="uid://vdvhfutsijua" path="res://assets/player/robson frente idle.png" id="3_kbsxf"]
 [ext_resource type="Script" uid="uid://b6dpfvmcq76un" path="res://scripts/player/StateMachine.gd" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://t8dugsg281ix" path="res://assets/player/robson andando costas1.png" id="4_lulei"]
+[ext_resource type="Texture2D" uid="uid://bc1e7i6l8iiy8" path="res://assets/player/robson andando frente1.png" id="4_sd3sa"]
 [ext_resource type="Script" uid="uid://cojpj7xhxig1v" path="res://scripts/player/states/idle.gd" id="4_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dyg5w4tpwdugl" path="res://assets/player/robson andando costas2.png" id="5_edtk3"]
+[ext_resource type="Texture2D" uid="uid://m352qq8e3oly" path="res://assets/player/robson andando frente2.png" id="5_m2qjg"]
 [ext_resource type="Script" uid="uid://cvt3ejnyoispy" path="res://scripts/player/states/move.gd" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://dqj5053q8k2kt" path="res://prefabs/interaction_components/interacting_component.tscn" id="6_g2jcq"]
+[ext_resource type="Texture2D" uid="uid://wpxdqohdqlig" path="res://assets/player/robson andando frente3.png" id="6_llb5v"]
+[ext_resource type="Texture2D" uid="uid://dpafpojieqj13" path="res://assets/player/robson andando costas3.png" id="6_q2wkl"]
 [ext_resource type="Script" uid="uid://dcbeeyyy8amwg" path="res://scripts/player/states/mix.gd" id="6_u51tk"]
+[ext_resource type="Texture2D" uid="uid://c6hgv3nxelg7o" path="res://assets/player/robson andando costas4.png" id="7_f2e50"]
+[ext_resource type="Texture2D" uid="uid://cf4ou4u67fcqt" path="res://assets/player/robson andando frente4.png" id="7_x0bak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(6, 6)
+size = Vector2(20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgeog"]
+atlas = ExtResource("3_kbsxf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opo22"]
+atlas = ExtResource("3_kbsxf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rb0w"]
+atlas = ExtResource("3_kbsxf")
+region = Rect2(0, 39, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd3sa"]
+atlas = ExtResource("3_kbsxf")
+region = Rect2(32, 39, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2qjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgeog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opo22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rb0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd3sa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lulei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edtk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q2wkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f2e50")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sd3sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m2qjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_llb5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x0bak")
+}],
+"loop": true,
+"name": &"walk_forward",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 inv = ExtResource("2_kbsxf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_3vyb7")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m2qjg")
+animation = &"idle"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_qlg0r")
@@ -41,3 +130,5 @@ script = ExtResource("6_u51tk")
 metadata/_custom_type_script = "uid://clbp56nh0wl06"
 
 [node name="InteractingComponent" parent="." instance=ExtResource("6_g2jcq")]
+position = Vector2(0, 2)
+scale = Vector2(2.59, 2.59)
