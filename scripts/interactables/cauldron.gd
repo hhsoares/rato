@@ -1,6 +1,8 @@
 extends StaticBody2D
 class_name Cauldron
 
+@export var inv: Inv
+
 @export var fill_rate: float = 40.0
 var mix_percent: float = 0.0
 

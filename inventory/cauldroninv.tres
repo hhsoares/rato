@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=5 format=3 uid="uid://cxep2u6qkotl7"]
+
+[ext_resource type="Script" uid="uid://c7kb2nan6jaj3" path="res://scripts/player/inventory/inventory.gd" id="1_e3e7t"]
+[ext_resource type="Script" uid="uid://cybmg20b2sxys" path="res://scripts/player/inventory/inv_slot.gd" id="2_xfopt"]
+
+[sub_resource type="Resource" id="Resource_tjdj5"]
+script = ExtResource("2_xfopt")
+metadata/_custom_type_script = "uid://cybmg20b2sxys"
+
+[sub_resource type="Resource" id="Resource_tebbx"]
+script = ExtResource("2_xfopt")
+metadata/_custom_type_script = "uid://cybmg20b2sxys"
+
+[resource]
+script = ExtResource("1_e3e7t")
+slots = Array[ExtResource("2_xfopt")]([SubResource("Resource_tjdj5"), SubResource("Resource_tebbx")])
+metadata/_custom_type_script = "uid://c7kb2nan6jaj3"
