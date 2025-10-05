@@ -8,24 +8,50 @@ var current_interactions: Array = []
 var can_interact: bool = true
 var active_target: Area2D = null
 
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and can_interact and current_interactions.size() > 0:
-		var target: Area2D = current_interactions[0]
+	if not (event.is_action_pressed("interact") and can_interact):
+		return
+
+	# If a session is active, pressing interact should end it and exit Mix.
+	if active_target:
 		can_interact = false
-		interact_label.hide()
+		var still_active: bool = active_target.interact.call(player)  # should return false
+		active_target = null
+		player.controls_enabled = true
 
-		# Start or stop the target. The callable returns whether it remains active.
-		var active: bool = target.interact.call()
-
-		if active:
-			active_target = target
-			player.controls_enabled = false
-		else:
-			if active_target == target:
-				active_target = null
-			player.controls_enabled = true
+		var sm := player.get_node("StateMachine") as StateMachine
+		if sm and sm.current_state and sm.current_state.name.to_lower() == "mix":
+			sm.change_state("idle")
 
 		can_interact = true
+		return
+
+	# No active session: start with nearest target
+	if current_interactions.size() == 0:
+		return
+
+	var target: Area2D = current_interactions[0]
+	can_interact = false
+	interact_label.hide()
+
+	var active: bool = target.interact.call(player)
+
+	if active:
+		active_target = target
+		#player.controls_enabled = false
+
+		# Enter Mix only if not already in Mix
+		if target.get_parent() is Cauldron:
+			var sm := player.get_node("StateMachine") as StateMachine
+			if sm and (not sm.current_state or sm.current_state.name.to_lower() != "mix"):
+				sm.change_state("mix")
+	else:
+		# safety
+		active_target = null
+		player.controls_enabled = true
+
+	can_interact = true
 
 func _process(_delta: float) -> void:
 	if current_interactions.size() > 0 and can_interact:

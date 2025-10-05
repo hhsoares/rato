@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdshh5t6rarrl"]
+
+[ext_resource type="Script" uid="uid://4vv56pes8f41" path="res://scripts/interactables/radish_box.gd" id="1_ke73o"]
+[ext_resource type="Texture2D" uid="uid://d4aml2vb6mcjj" path="res://assets/tileset and scenario/caixa rabanete.png" id="1_q3lws"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_a5osb"]
+[ext_resource type="Resource" uid="uid://d0e6vwdeqdtft" path="res://inventory/items/radish.tres" id="2_b8adm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lws"]
+size = Vector2(29, 25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ke73o"]
+radius = 25.019993
+
+[node name="Radish Box" type="StaticBody2D"]
+script = ExtResource("1_ke73o")
+item = ExtResource("2_b8adm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q3lws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_q3lws")
+
+[node name="Interactable" parent="." instance=ExtResource("2_a5osb")]
+interact_name = "Collect a Radish"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_ke73o")
