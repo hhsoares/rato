@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqj5053q8k2kt"]
+[gd_scene load_steps=5 format=3 uid="uid://dqj5053q8k2kt"]
 
 [ext_resource type="Script" uid="uid://b253s6pb13knc" path="res://scripts/interaction_components/interacting_component.gd" id="1_e32r1"]
+[ext_resource type="FontFile" uid="uid://f8477ao5ta5s" path="res://fonts/Micro5-Regular.ttf" id="2_qqy0w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dxoec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e32r1"]
-font_size = 12
-outline_size = 2
+font = ExtResource("2_qqy0w")
+font_size = 52
+outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [node name="InteractingComponent" type="Node2D"]
@@ -28,12 +30,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -48.0
-offset_right = 47.5
-offset_bottom = -25.0
+offset_left = -16.475
+offset_top = -16.0
+offset_right = 191.525
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.16, 0.16)
+theme_override_font_sizes/font_size = 11
 text = "E to Interact"
 label_settings = SubResource("LabelSettings_e32r1")
 horizontal_alignment = 1
