@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d27xvr4faa0cr"]
+[gd_scene load_steps=7 format=3 uid="uid://d27xvr4faa0cr"]
 
 [ext_resource type="Script" uid="uid://buo8iec1monjs" path="res://scripts/interactables/potato_box.gd" id="1_iuq1n"]
 [ext_resource type="Texture2D" uid="uid://bg4l0sl821ygn" path="res://assets/tileset and scenario/caixa batata.png" id="1_kd7ns"]
 [ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_ej13s"]
+[ext_resource type="Resource" uid="uid://djr1g14iivtq6" path="res://inventory/items/potato.tres" id="2_wipac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd7ns"]
 size = Vector2(26, 23)
@@ -12,6 +13,7 @@ radius = 26.004807
 
 [node name="Potato Box" type="StaticBody2D"]
 script = ExtResource("1_iuq1n")
+item = ExtResource("2_wipac")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kd7ns")

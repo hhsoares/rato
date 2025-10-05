@@ -6,6 +6,6 @@ class_name CarrotBox
 func _ready() -> void:
 	interactable.interact = _on_interact
 
-func _on_interact() -> bool:
+func _on_interact(_body: Player) -> bool:
 	print("carrot box interacted")
 	return true

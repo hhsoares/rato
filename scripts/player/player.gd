@@ -16,3 +16,6 @@ func move(speed: float, acceleration: float, delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	velocity = lerp(velocity, input_direction * speed, acceleration * delta)
+
+func collect(item):
+	inv.insert(item)

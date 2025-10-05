@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 	# If a session is active, pressing interact should end it and exit Mix.
 	if active_target:
 		can_interact = false
-		var still_active: bool = active_target.interact.call()  # should return false
+		var still_active: bool = active_target.interact.call(player)  # should return false
 		active_target = null
 		player.controls_enabled = true
 
@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 	can_interact = false
 	interact_label.hide()
 
-	var active: bool = target.interact.call()
+	var active: bool = target.interact.call(player)
 
 	if active:
 		active_target = target

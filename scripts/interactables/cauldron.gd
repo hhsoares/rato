@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_to_group("cauldron")
 	interactable.interact = _on_interact
 
-func _on_interact() -> bool:
+func _on_interact(_body: Player) -> bool:
 	print("cauldron interacted")
 	session_active = !session_active
 	return session_active
