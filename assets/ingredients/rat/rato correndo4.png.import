@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cswvesvkenekm"
-path="res://.godot/imported/rato correndo3.png-ffc574b1441192001ad6b0b6617ce5a6.ctex"
+uid="uid://dmfoktep4par4"
+path="res://.godot/imported/rato correndo4.png-19409635374fd28e721e4102768e8f61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset and scenario/rato correndo3.png"
-dest_files=["res://.godot/imported/rato correndo3.png-ffc574b1441192001ad6b0b6617ce5a6.ctex"]
+source_file="res://assets/ingredients/rat/rato correndo4.png"
+dest_files=["res://.godot/imported/rato correndo4.png-19409635374fd28e721e4102768e8f61.ctex"]
 
 [params]
 
