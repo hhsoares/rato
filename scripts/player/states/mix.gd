@@ -1,3 +1,4 @@
+# mix.gd
 extends State
 @onready var player: Player = get_parent().get_parent()
 var cauldron: Cauldron
@@ -7,15 +8,19 @@ func enter() -> void:
 	print("Mix: enter")
 
 func exit() -> void:
+	if cauldron:
+		cauldron.set_mixing(false)
 	print("Mix: exit")
 
 func physics_update(delta: float) -> void:
-	if not cauldron:
+	if not cauldron or not cauldron.session_active:
+		if cauldron: cauldron.set_mixing(false)
 		return
-	if not cauldron.session_active:
+
+	var pressing := Input.is_action_pressed("mix")
+	cauldron.set_mixing(pressing)
+	if not pressing:
 		return
-	if not Input.is_action_pressed("mix"):
-		return
-	
+
 	var p := cauldron.mix_step(delta)
 	print("Mix:", int(p), "%")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://beyhlbivut7aq"]
 
 [ext_resource type="Texture2D" uid="uid://clchgxnjxu1lx" path="res://assets/plates/pratovazio.png" id="1_1rwj6"]
-[ext_resource type="Script" uid="uid://epagjjsrqxn5" path="res://scripts/interactables/plate.gd" id="1_ceqbe"]
+[ext_resource type="Script" path="res://scripts/interactables/plate.gd" id="1_ceqbe"]
 [ext_resource type="Script" uid="uid://caq5bo58ddlxj" path="res://scripts/player/inventory/inventory_item.gd" id="2_2q5fk"]
 [ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_r1vct"]
 
@@ -29,6 +29,7 @@ texture = ExtResource("1_1rwj6")
 shape = SubResource("CircleShape2D_ceqbe")
 
 [node name="Interactable" parent="." instance=ExtResource("2_r1vct")]
+interact_name = "Collect a Plate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CapsuleShape2D_ceqbe")
