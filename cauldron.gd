@@ -6,11 +6,11 @@ var mix_percent: float = 0.0
 
 @export_node_path("StateMachine") var state_machine_path: NodePath
 @onready var state_machine: StateMachine = get_node(state_machine_path) as StateMachine
-
 @onready var interactable: Area2D = $Interactable
 var session_active := false
 
 func _ready() -> void:
+	add_to_group("cauldron")
 	interactable.interact = _on_interact
 
 func _on_interact() -> bool:
