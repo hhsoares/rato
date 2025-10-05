@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuxvjsd21fvy4"]
+[gd_scene load_steps=9 format=3 uid="uid://cuxvjsd21fvy4"]
 
 [ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c6pxpobrm6pm8" path="res://scripts/player/player.gd" id="1_g2els"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cojpj7xhxig1v" path="res://scripts/player/states/idle.gd" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://cvt3ejnyoispy" path="res://scripts/player/states/move.gd" id="5_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://dqj5053q8k2kt" path="res://prefabs/interaction_components/interacting_component.tscn" id="6_g2jcq"]
+[ext_resource type="Script" uid="uid://dcbeeyyy8amwg" path="res://scripts/player/states/mix.gd" id="6_u51tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(6, 6)
@@ -31,6 +32,10 @@ metadata/_custom_type_script = "uid://clbp56nh0wl06"
 
 [node name="Move" type="Node" parent="StateMachine"]
 script = ExtResource("5_qlg0r")
+metadata/_custom_type_script = "uid://clbp56nh0wl06"
+
+[node name="Mix" type="Node" parent="StateMachine"]
+script = ExtResource("6_u51tk")
 metadata/_custom_type_script = "uid://clbp56nh0wl06"
 
 [node name="InteractingComponent" parent="." instance=ExtResource("6_g2jcq")]
