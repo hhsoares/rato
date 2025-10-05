@@ -1,12 +1,12 @@
 extends State
 
 @onready var player: Player = get_parent().get_parent()
-
+@onready var anim = $"../../AnimatedSprite2D"
 func physics_update(delta: float) -> void:
 	#if Input.is_action_just_pressed("mix"):
 		#state_machine.change_state("mix")
 		#return
-
+	anim.play("idle")
 	if player.input_direction != Vector2.ZERO:
 		state_machine.change_state("move")
 

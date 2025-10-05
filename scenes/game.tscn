@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://0u2uwrmucc4m" path="res://prefabs/cauldron.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://ccofe6h5rbxcm" path="res://assets/tileset and scenario/parede balcao.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bv2jbnb7njdxj" path="res://assets/tileset and scenario/tilemap_mesinha-Sheet.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://bwf5th2hsvcxr" path="res://assets/tileset and scenario/ROMBO.png" id="5_kvuet"]
 [ext_resource type="PackedScene" uid="uid://btrexy543itto" path="res://prefabs/carrot_box.tscn" id="5_trtic"]
 [ext_resource type="PackedScene" uid="uid://d27xvr4faa0cr" path="res://prefabs/potato_box.tscn" id="6_ir15t"]
 [ext_resource type="Texture2D" uid="uid://d24a4yncjbjim" path="res://assets/tileset and scenario/JANELA.png" id="6_trtic"]
 [ext_resource type="PackedScene" uid="uid://cdshh5t6rarrl" path="res://prefabs/radish_box.tscn" id="7_ca42v"]
 [ext_resource type="Texture2D" uid="uid://bs0lthphsscsg" path="res://assets/tileset and scenario/sombra caldeirao.png" id="8_vtaks"]
-[ext_resource type="Texture2D" uid="uid://c2s5qjd71phkw" path="res://assets/tileset and scenario/CACO DE VRIDO.png" id="13_ir15t"]
+[ext_resource type="PackedScene" uid="uid://cb1wyoa7k32g6" path="res://prefabs/hole.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://dly33sek43mjg" path="res://prefabs/rat_spawner.tscn" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://jxt7n4r6bpkq" path="res://prefabs/glass.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("2_p57ef")
@@ -115,6 +115,10 @@ position = Vector2(0, 21)
 tile_map_data = PackedByteArray("AAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAALAAIAAgABAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgACAAAAAAA=")
 tile_set = SubResource("TileSet_ir15t")
 
+[node name="Grass" parent="Scenario/Tileset" instance=ExtResource("15_ir15t")]
+position = Vector2(386.00003, 95)
+scale = Vector2(0.73, 0.73)
+
 [node name="Carrot Box" parent="Scenario/Tileset" instance=ExtResource("5_trtic")]
 position = Vector2(167, 237)
 scale = Vector2(0.66, 0.66)
@@ -131,16 +135,6 @@ scale = Vector2(0.66, 0.66)
 position = Vector2(386, 69)
 scale = Vector2(0.71, 0.71)
 
-[node name="CacoDeVrido" type="Sprite2D" parent="Scenario/Node2D"]
-position = Vector2(6.1035156e-05, 36.619728)
-scale = Vector2(1.0352113, 1.0352113)
-texture = ExtResource("13_ir15t")
-
-[node name="Rombo" type="Sprite2D" parent="Scenario/Node2D"]
-position = Vector2(-11.267625, 225.35213)
-scale = Vector2(1.4084507, 1.4084507)
-texture = ExtResource("5_kvuet")
-
 [node name="Janela" type="Sprite2D" parent="Scenario/Node2D"]
 texture = ExtResource("6_trtic")
 
@@ -151,6 +145,9 @@ texture = ExtResource("6_trtic")
 [node name="Janela3" type="Sprite2D" parent="Scenario/Node2D"]
 position = Vector2(-242.25354, 0)
 texture = ExtResource("6_trtic")
+
+[node name="Hole" parent="Scenario" instance=ExtResource("10_trtic")]
+position = Vector2(378, 229)
 
 [node name="SombraCaldeirao" type="Sprite2D" parent="Scenario"]
 position = Vector2(300, 183)
