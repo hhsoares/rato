@@ -28,6 +28,7 @@ texture = ExtResource("1_i60ku")
 shape = SubResource("CircleShape2D_a0fxu")
 
 [node name="Interactable" parent="." instance=ExtResource("2_ertee")]
+interact_name = "Collect Wooden Plank"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_1s662")

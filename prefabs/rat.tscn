@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://25fn2r5t008b"]
+[gd_scene load_steps=14 format=3 uid="uid://25fn2r5t008b"]
 
-[ext_resource type="Script" path="res://scripts/rat.gd" id="1_rhti1"]
-[ext_resource type="Texture2D" path="res://assets/ingredients/rat/rato correndo1.png" id="2_qt8pk"]
-[ext_resource type="Texture2D" path="res://assets/ingredients/rat/rato correndo2.png" id="3_3ep3h"]
-[ext_resource type="Texture2D" path="res://assets/ingredients/rat/rato correndo3.png" id="4_raom5"]
-[ext_resource type="Texture2D" path="res://assets/ingredients/rat/rato correndo4.png" id="5_1b247"]
-[ext_resource type="Texture2D" path="res://assets/ingredients/rat/rato correndo5.png" id="6_bodvj"]
+[ext_resource type="Script" uid="uid://cxyy4t358ii0v" path="res://scripts/rat.gd" id="1_rhti1"]
+[ext_resource type="Resource" uid="uid://bofcmmnfjgky6" path="res://inventory/items/rat.tres" id="2_3ep3h"]
+[ext_resource type="Texture2D" uid="uid://b1jsoesvu02w3" path="res://assets/ingredients/rat/rato correndo1.png" id="2_qt8pk"]
+[ext_resource type="Texture2D" uid="uid://dbfoax3w8eorn" path="res://assets/ingredients/rat/rato correndo2.png" id="3_3ep3h"]
+[ext_resource type="Texture2D" uid="uid://cguyxajyo3b1n" path="res://assets/ingredients/rat/rato correndo3.png" id="4_raom5"]
+[ext_resource type="Texture2D" uid="uid://dmfoktep4par4" path="res://assets/ingredients/rat/rato correndo4.png" id="5_1b247"]
+[ext_resource type="Texture2D" uid="uid://dmry484khygiv" path="res://assets/ingredients/rat/rato correndo5.png" id="6_bodvj"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="8_3ep3h"]
+
+[sub_resource type="GDScript" id="GDScript_qt8pk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhr13"]
 animations = [{
@@ -42,16 +46,21 @@ animations = [{
 radius = 6.0
 height = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_raom5"]
+radius = 14.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhti1"]
 size = Vector2(20, 92)
 
 [node name="Rat" type="Node2D"]
+script = SubResource("GDScript_qt8pk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_rhti1")
 area = NodePath("../Area2D")
 speed = 80.0
 wait_time = 5.0
+item = ExtResource("2_3ep3h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_xhr13")
@@ -62,6 +71,13 @@ frame_progress = 0.62516856
 position = Vector2(-2, 4)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_tfxja")
+
+[node name="Interactable" parent="CharacterBody2D" instance=ExtResource("8_3ep3h")]
+interact_name = "Collect Rat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Interactable"]
+position = Vector2(2, 4)
+shape = SubResource("CircleShape2D_raom5")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -53)

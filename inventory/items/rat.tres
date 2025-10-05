@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://bofcmmnfjgky6"]
+
+[ext_resource type="Script" uid="uid://caq5bo58ddlxj" path="res://scripts/player/inventory/inventory_item.gd" id="1_vr515"]
+
+[resource]
+script = ExtResource("1_vr515")
+name = "rat"
+metadata/_custom_type_script = "uid://caq5bo58ddlxj"

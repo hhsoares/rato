@@ -1,8 +1,12 @@
 extends CharacterBody2D
+class_name Rat
 
 @export var area: NodePath  # Area2D that defines the movement bounds
 @export var speed: float = 100.0  # Rat movement speed
 @export var wait_time: float = 1.5  # Time the rat waits before choosing a new destination
+
+@onready var interactable: Area2D = $Interactable
+@export var item: InvItem
 
 var destination: Vector2  # Current target position
 var waiting: bool = false  # Whether the rat is currently waiting
@@ -14,6 +18,7 @@ func _ready() -> void:
 	randomize()
 	var area_node = get_node(area)
 	destination = generate_random_point_in_area(area_node)
+	interactable.interact = _on_interact
 
 func _physics_process(delta: float) -> void:
 	if waiting:
@@ -70,3 +75,11 @@ func move_to_destination(target: Vector2, _delta: float) -> void:
 			anim_player.play("idle")
 			waiting = true
 			wait_timer = wait_time
+
+func _on_interact(body: Player) -> bool:
+	if body.collect(item):
+		print("collected:", item.name)
+		queue_free()   # or disable the box
+		return true    # success
+	print("inventory full")
+	return false      # nothing collected
