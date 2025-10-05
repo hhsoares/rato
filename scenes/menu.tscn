@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://by3rpmvypa3s4"]
+[gd_scene load_steps=7 format=3 uid="uid://by3rpmvypa3s4"]
 
 [ext_resource type="Script" uid="uid://dkjqpkiy0h5g1" path="res://scripts/script scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://3ncg63plwky4" path="res://assets/menu.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c6iihokwa2jn4" path="res://assets/botoes/botao play solto.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bc6v3gfp7g2gx" path="res://assets/botoes/botao play pressed.png" id="4_v86rl"]
+[ext_resource type="Texture2D" uid="uid://femmc6ksmomo" path="res://assets/botoes/botao quit solto.png" id="5_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dyjaf0mhqq8mk" path="res://assets/botoes/botao quit pressed.png" id="6_i6lef"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,6 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_g3eks")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,24 +29,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -33.0
-offset_right = 21.0
-offset_bottom = 33.0
+offset_left = -851.0
+offset_top = -54.0
+offset_right = -371.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 42
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "RATAO NOJENTO"
+texture_normal = ExtResource("2_vjb58")
+texture_pressed = ExtResource("4_v86rl")
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Play"
-
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+texture_normal = ExtResource("5_13sgg")
+texture_pressed = ExtResource("6_i6lef")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
