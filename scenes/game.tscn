@@ -160,6 +160,7 @@ scale = Vector2(1.2299999, 1.2299999)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(210, 226)
+scale = Vector2(0.8, 0.8)
 collision_mask = 3
 
 [node name="RatSpawner" parent="." instance=ExtResource("14_trtic")]
