@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://0u2uwrmucc4m" path="res://prefabs/cauldron.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://ccofe6h5rbxcm" path="res://assets/tileset and scenario/parede balcao.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bv2jbnb7njdxj" path="res://assets/tileset and scenario/tilemap_mesinha-Sheet.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://bg4l0sl821ygn" path="res://assets/tileset and scenario/caixa batata.png" id="5_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://da6rixme7w714" path="res://assets/tileset and scenario/caixa cenoura.png" id="6_vtaks"]
-[ext_resource type="Texture2D" uid="uid://d4aml2vb6mcjj" path="res://assets/tileset and scenario/caixa rabanete.png" id="7_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://d27xvr4faa0cr" path="res://prefabs/potato_box.tscn" id="5_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://btrexy543itto" path="res://prefabs/carrot_box.tscn" id="6_dinhu"]
+[ext_resource type="PackedScene" uid="uid://cdshh5t6rarrl" path="res://prefabs/radish_box.tscn" id="8_kvuet"]
 [ext_resource type="Texture2D" uid="uid://bs0lthphsscsg" path="res://assets/tileset and scenario/sombra caldeirao.png" id="8_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
@@ -108,20 +108,17 @@ tile_set = SubResource("TileSet_kvuet")
 tile_map_data = PackedByteArray("AAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAALAAIAAgABAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgACAAAAAAA=")
 tile_set = SubResource("TileSet_ir15t")
 
-[node name="CaixaBatata" type="Sprite2D" parent="Scenario"]
-position = Vector2(107.00001, 208.00002)
+[node name="Potato Box" parent="Scenario" instance=ExtResource("5_kvpfn")]
+position = Vector2(101, 216)
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("5_0tnpc")
 
-[node name="CaixaCenoura" type="Sprite2D" parent="Scenario"]
-position = Vector2(83, 182)
+[node name="Carrot Box" parent="Scenario" instance=ExtResource("6_dinhu")]
+position = Vector2(73, 162.00002)
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("6_vtaks")
 
-[node name="CaixaRabanete" type="Sprite2D" parent="Scenario"]
-position = Vector2(150, 208)
+[node name="Radish Box" parent="Scenario" instance=ExtResource("8_kvuet")]
+position = Vector2(149, 217.00002)
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("7_kvpfn")
 
 [node name="SombraCaldeirao" type="Sprite2D" parent="Scenario"]
 position = Vector2(300, 166)

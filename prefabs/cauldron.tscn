@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0u2uwrmucc4m"]
 
-[ext_resource type="Script" uid="uid://bdrube0djq8ob" path="res://cauldron.gd" id="1_v7emq"]
+[ext_resource type="Script" uid="uid://bdrube0djq8ob" path="res://scripts/interactables/cauldron.gd" id="1_v7emq"]
 [ext_resource type="Texture2D" uid="uid://ch08x5rohgrn3" path="res://assets/caldeirao vazio.png" id="1_x11kc"]
 [ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_jgyxs"]
 

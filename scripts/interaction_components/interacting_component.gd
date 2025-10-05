@@ -39,7 +39,7 @@ func _input(event: InputEvent) -> void:
 
 	if active:
 		active_target = target
-		player.controls_enabled = false
+		#player.controls_enabled = false
 
 		# Enter Mix only if not already in Mix
 		if target.get_parent() is Cauldron:

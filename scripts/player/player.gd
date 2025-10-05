@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 var input_direction = Vector2.ZERO
 var controls_enabled: bool = true
 
+@export var inv: Inv
+
 func _physics_process(_delta: float) -> void:
 	if controls_enabled:
 		input_direction = Input.get_vector("left", "right", "up", "down").normalized()

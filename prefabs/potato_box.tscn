@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d27xvr4faa0cr"]
+
+[ext_resource type="Script" uid="uid://buo8iec1monjs" path="res://scripts/interactables/potato_box.gd" id="1_iuq1n"]
+[ext_resource type="Texture2D" uid="uid://bg4l0sl821ygn" path="res://assets/tileset and scenario/caixa batata.png" id="1_kd7ns"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_ej13s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd7ns"]
+size = Vector2(26, 23)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iuq1n"]
+radius = 26.004807
+
+[node name="Potato Box" type="StaticBody2D"]
+script = ExtResource("1_iuq1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kd7ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kd7ns")
+
+[node name="Interactable" parent="." instance=ExtResource("2_ej13s")]
+position = Vector2(0, -0.5)
+interact_name = "Collect a Potato"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_iuq1n")

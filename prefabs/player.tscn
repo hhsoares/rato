@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuxvjsd21fvy4"]
+[gd_scene load_steps=10 format=3 uid="uid://cuxvjsd21fvy4"]
 
 [ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c6pxpobrm6pm8" path="res://scripts/player/player.gd" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://30e64c78axyk" path="res://inventory/playerinv.tres" id="2_kbsxf"]
 [ext_resource type="Script" uid="uid://b6dpfvmcq76un" path="res://scripts/player/StateMachine.gd" id="3_qlg0r"]
 [ext_resource type="Script" uid="uid://cojpj7xhxig1v" path="res://scripts/player/states/idle.gd" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://cvt3ejnyoispy" path="res://scripts/player/states/move.gd" id="5_qlg0r"]
@@ -13,6 +14,7 @@ size = Vector2(6, 6)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+inv = ExtResource("2_kbsxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
