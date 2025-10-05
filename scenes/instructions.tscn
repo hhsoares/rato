@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7nr3pf71afox"]
+[gd_scene load_steps=3 format=3 uid="uid://7nr3pf71afox"]
 
 [ext_resource type="Script" uid="uid://ytndgckpxt5e" path="res://scripts/script scenes/instructions.gd" id="1_dkfqi"]
+[ext_resource type="Texture2D" uid="uid://jq158m3ht5he" path="res://assets/faça sopa.png" id="2_nisbi"]
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
@@ -11,21 +12,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dkfqi")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 162.0
-offset_top = 139.0
-offset_right = 650.0
-offset_bottom = 188.0
-text = "oie novo cozinheiro, bem-vindo ao seu novo emprego.
-entregue tudo ou vc vai morre hihihi give your jumps my friend"
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_nisbi")
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 290.0
-offset_right = 454.0
-offset_bottom = 321.0
-text = "Let's start"
+offset_left = 507.0
+offset_top = 641.0
+offset_right = 746.0
+offset_bottom = 741.0
+text = "Start"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
