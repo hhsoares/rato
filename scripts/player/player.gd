@@ -17,5 +17,5 @@ func move(speed: float, acceleration: float, delta: float) -> void:
 		return
 	velocity = lerp(velocity, input_direction * speed, acceleration * delta)
 
-func collect(item):
-	inv.insert(item)
+func collect(item: InvItem) -> bool:
+	return inv.insert(item)

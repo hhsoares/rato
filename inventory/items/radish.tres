@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d0e6vwdeqdtft"]
+
+[ext_resource type="Script" uid="uid://caq5bo58ddlxj" path="res://scripts/player/inventory/inventory_item.gd" id="1_2xfh2"]
+[ext_resource type="Texture2D" uid="uid://cxohy7bpaqnxe" path="res://assets/ingredients/rabanete.png" id="2_yobvb"]
+
+[resource]
+script = ExtResource("1_2xfh2")
+name = "radish"
+texture = ExtResource("2_yobvb")
+metadata/_custom_type_script = "uid://caq5bo58ddlxj"

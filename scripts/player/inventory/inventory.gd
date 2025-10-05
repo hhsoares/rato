@@ -5,13 +5,22 @@ signal update
 
 @export var slots: Array[InvSlot]
 
-func insert(item: InvItem):
-	var itemslots = slots.filter(func(slot): return slot.item == item)
-	if !itemslots.is_empty():
-		itemslots[0].amount += 1
-	else:
-		var emptyslots =  slots.filter(func(slot): return slot.item == null)
-		if !emptyslots.is_empty():
-			emptyslots[0].item = item
-			emptyslots[0].amount = 1
-	update.emit()
+func has_item() -> bool:
+	for s in slots:
+		if s.item != null and s.amount > 0:
+			return true
+	return false
+	
+func insert(item: InvItem) -> bool:
+	# single-item inventory: refuse if already holding something
+	if has_item():
+		return false
+
+	# put item into first empty slot
+	for s in slots:
+		if s.item == null or s.amount == 0:
+			s.item = item
+			s.amount = 1
+			update.emit()
+			return true
+	return false

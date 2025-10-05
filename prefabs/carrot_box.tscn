@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://btrexy543itto"]
+[gd_scene load_steps=7 format=3 uid="uid://btrexy543itto"]
 
 [ext_resource type="Script" uid="uid://bitxnsrgvq7o4" path="res://scripts/interactables/carrot_box.gd" id="1_8vu7s"]
 [ext_resource type="Texture2D" uid="uid://da6rixme7w714" path="res://assets/tileset and scenario/caixa cenoura.png" id="1_wntjl"]
+[ext_resource type="Resource" uid="uid://0xvt3tn4gvg" path="res://inventory/items/carrot.tres" id="2_qrj5n"]
 [ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="2_uqyob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wntjl"]
@@ -12,6 +13,7 @@ radius = 29.605743
 
 [node name="Carrot Box" type="StaticBody2D"]
 script = ExtResource("1_8vu7s")
+item = ExtResource("2_qrj5n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wntjl")
