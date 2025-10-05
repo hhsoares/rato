@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://jssh3sf4yju2"]
+
+[ext_resource type="Script" uid="uid://cnock2jvvyhav" path="res://scripts/rat_spawner.gd" id="1_73d4g"]
+[ext_resource type="PackedScene" uid="uid://fefmcndkgchk" path="res://prefabs/rat.tscn" id="2_ycfsr"]
+
+[node name="RatSpawner" type="Node2D"]
+script = ExtResource("1_73d4g")
+rat = ExtResource("2_ycfsr")
+time = 15.0

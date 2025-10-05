@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fefmcndkgchk"]
+[gd_scene load_steps=10 format=3 uid="uid://fefmcndkgchk"]
 
 [ext_resource type="Script" uid="uid://cxyy4t358ii0v" path="res://scripts/rat.gd" id="1_rhti1"]
 [ext_resource type="Texture2D" uid="uid://b1jsoesvu02w3" path="res://assets/ingredients/rat/rato correndo1.png" id="2_qt8pk"]
@@ -42,16 +42,21 @@ animations = [{
 radius = 6.0
 height = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhti1"]
+size = Vector2(20, 92)
+
 [node name="Rat" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_rhti1")
 area = NodePath("../Area2D")
+speed = 80.0
+wait_time = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_xhr13")
 animation = &"running"
-frame_progress = 0.30586112
+frame_progress = 0.09956057
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2, 4)
@@ -59,5 +64,8 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_tfxja")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_rhti1")

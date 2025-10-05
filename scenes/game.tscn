@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://r30jccqmbdpo"]
+[gd_scene load_steps=19 format=4 uid="uid://r30jccqmbdpo"]
 
 [ext_resource type="Script" uid="uid://cw4uvbl7572ms" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cuxvjsd21fvy4" path="res://prefabs/player.tscn" id="1_uwrxv"]
@@ -6,14 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://0u2uwrmucc4m" path="res://prefabs/cauldron.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://ccofe6h5rbxcm" path="res://assets/tileset and scenario/parede balcao.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bv2jbnb7njdxj" path="res://assets/tileset and scenario/tilemap_mesinha-Sheet.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://bg4l0sl821ygn" path="res://assets/tileset and scenario/caixa batata.png" id="5_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bwf5th2hsvcxr" path="res://assets/tileset and scenario/ROMBO.png" id="5_kvuet"]
 [ext_resource type="Texture2D" uid="uid://d24a4yncjbjim" path="res://assets/tileset and scenario/JANELA.png" id="6_trtic"]
-[ext_resource type="Texture2D" uid="uid://da6rixme7w714" path="res://assets/tileset and scenario/caixa cenoura.png" id="6_vtaks"]
-[ext_resource type="Texture2D" uid="uid://d4aml2vb6mcjj" path="res://assets/tileset and scenario/caixa rabanete.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bs0lthphsscsg" path="res://assets/tileset and scenario/sombra caldeirao.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://c2s5qjd71phkw" path="res://assets/tileset and scenario/CACO DE VRIDO.png" id="13_ir15t"]
-[ext_resource type="PackedScene" uid="uid://fefmcndkgchk" path="res://prefabs/rat.tscn" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://jssh3sf4yju2" path="res://prefabs/rat_spawner.tscn" id="14_trtic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("2_p57ef")
@@ -85,9 +82,6 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_trtic")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
-size = Vector2(32, 96.5)
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lnu2h")
 
@@ -143,21 +137,6 @@ texture = ExtResource("6_trtic")
 position = Vector2(-242.25354, 0)
 texture = ExtResource("6_trtic")
 
-[node name="CaixaBatata" type="Sprite2D" parent="Scenario"]
-position = Vector2(108.00001, 226.00002)
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("5_0tnpc")
-
-[node name="CaixaCenoura" type="Sprite2D" parent="Scenario"]
-position = Vector2(84, 200)
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("6_vtaks")
-
-[node name="CaixaRabanete" type="Sprite2D" parent="Scenario"]
-position = Vector2(151, 226)
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("7_kvpfn")
-
 [node name="SombraCaldeirao" type="Sprite2D" parent="Scenario"]
 position = Vector2(300, 183)
 scale = Vector2(1.0000001, 1.0000001)
@@ -171,21 +150,8 @@ scale = Vector2(1.2299999, 1.2299999)
 position = Vector2(210, 226)
 collision_mask = 3
 
-[node name="Rat" parent="." instance=ExtResource("14_trtic")]
-position = Vector2(380, 223)
-
-[node name="CharacterBody2D" parent="Rat" index="0"]
-speed = 70.0
-wait_time = 5.0
-
-[node name="Area2D" parent="Rat" index="1"]
-position = Vector2(6, -70)
-
-[node name="CollisionShape2D" parent="Rat/Area2D" index="0"]
-position = Vector2(-12, 10)
-shape = SubResource("RectangleShape2D_trtic")
+[node name="RatSpawner" parent="." instance=ExtResource("14_trtic")]
+position = Vector2(377, 226)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(240, 135)
-
-[editable path="Rat"]
