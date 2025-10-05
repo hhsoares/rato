@@ -19,3 +19,13 @@ func move(speed: float, acceleration: float, delta: float) -> void:
 
 func collect(item: InvItem) -> bool:
 	return inv.insert(item)
+
+func deposit_into(target: Inv) -> bool:
+	var held := inv.first_item()
+	if held == null:
+		return false
+	if not target.can_insert(held):
+		return false
+	inv.remove_one(held)
+	target.insert_any(held)
+	return true

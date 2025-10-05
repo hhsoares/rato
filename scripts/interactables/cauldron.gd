@@ -15,7 +15,18 @@ func _ready() -> void:
 	add_to_group("cauldron")
 	interactable.interact = _on_interact
 
-func _on_interact(_body: Player) -> bool:
+func _on_interact(body: Player) -> bool:
+	var held := body.inv.first_item()
+	if held:
+		if inv.insert_single(held):
+			body.inv.remove_one(held)
+			print("deposited:", held.name)
+			return session_active
+		if inv.is_full():
+			print("cauldron full")
+			return session_active
+
+	# no deposit -> toggle session
 	print("cauldron interacted")
 	session_active = !session_active
 	return session_active
