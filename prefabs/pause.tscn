@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwhlg5lfw0syv"]
+
+[ext_resource type="Texture2D" uid="uid://bdrxy8uhi2pp8" path="res://assets/PAUSED.png" id="1_iodxx"]
+
+[node name="Pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_iodxx")
+expand_mode = 1
+stretch_mode = 4
