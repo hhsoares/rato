@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://r30jccqmbdpo"]
+[gd_scene load_steps=23 format=4 uid="uid://r30jccqmbdpo"]
 
 [ext_resource type="Script" uid="uid://cw4uvbl7572ms" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cuxvjsd21fvy4" path="res://prefabs/player.tscn" id="1_uwrxv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d24a4yncjbjim" path="res://assets/tileset and scenario/JANELA.png" id="6_trtic"]
 [ext_resource type="PackedScene" uid="uid://cdshh5t6rarrl" path="res://prefabs/radish_box.tscn" id="7_ca42v"]
 [ext_resource type="Texture2D" uid="uid://bs0lthphsscsg" path="res://assets/tileset and scenario/sombra caldeirao.png" id="8_vtaks"]
+[ext_resource type="PackedScene" uid="uid://beyhlbivut7aq" path="res://prefabs/plate.tscn" id="10_ir15t"]
 [ext_resource type="PackedScene" uid="uid://cb1wyoa7k32g6" path="res://prefabs/hole.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://dly33sek43mjg" path="res://prefabs/rat_spawner.tscn" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://jxt7n4r6bpkq" path="res://prefabs/glass.tscn" id="15_ir15t"]
@@ -133,6 +134,14 @@ scale = Vector2(0.66, 0.66)
 [node name="Radish Box" parent="Scenario/Tileset" instance=ExtResource("7_ca42v")]
 position = Vector2(74.00001, 190.00002)
 scale = Vector2(0.66, 0.66)
+
+[node name="Plate" parent="Scenario/Tileset" instance=ExtResource("10_ir15t")]
+position = Vector2(167, 89)
+scale = Vector2(0.675, 0.675)
+
+[node name="Plate2" parent="Scenario/Tileset" instance=ExtResource("10_ir15t")]
+position = Vector2(273, 89)
+scale = Vector2(0.675, 0.675)
 
 [node name="Node2D" type="Node2D" parent="Scenario"]
 position = Vector2(386, 69)
