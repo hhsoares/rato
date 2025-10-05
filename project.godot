@@ -14,9 +14,15 @@ config/name="Rato"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -65,3 +71,7 @@ pause={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="interactions"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

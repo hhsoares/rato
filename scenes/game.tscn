@@ -1,14 +1,140 @@
-[gd_scene load_steps=3 format=3 uid="uid://r30jccqmbdpo"]
+[gd_scene load_steps=18 format=4 uid="uid://r30jccqmbdpo"]
 
+[ext_resource type="Script" uid="uid://cw4uvbl7572ms" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cuxvjsd21fvy4" path="res://prefabs/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://b0amx2gvlra3f" path="res://assets/tileset and scenario/tilemap bunda-Sheet.png" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://0u2uwrmucc4m" path="res://prefabs/cauldron.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://ccofe6h5rbxcm" path="res://assets/tileset and scenario/parede balcao.png" id="3_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://bv2jbnb7njdxj" path="res://assets/tileset and scenario/tilemap_mesinha-Sheet.png" id="4_gee14"]
+[ext_resource type="Texture2D" uid="uid://bg4l0sl821ygn" path="res://assets/tileset and scenario/caixa batata.png" id="5_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://da6rixme7w714" path="res://assets/tileset and scenario/caixa cenoura.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://d4aml2vb6mcjj" path="res://assets/tileset and scenario/caixa rabanete.png" id="7_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://bs0lthphsscsg" path="res://assets/tileset and scenario/sombra caldeirao.png" id="8_vtaks"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
+texture = ExtResource("2_p57ef")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vtaks"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_0tnpc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
+texture = ExtResource("2_p57ef")
+texture_region_size = Vector2i(32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 16, -16, 16, 16, 0, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5049362, -16, 16, -16, 16, -2.8676758)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 3.50494, 3.50494, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 1.9117851, 16, 16, -3.5049362, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -1.2745228, -16, -0.63726044)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 0.63726425, 16, 0.9558945, -0.31863022, -16, 0.31863022)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 1.2745247, -16, -16, -0.95589256)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dinhu"]
+texture = ExtResource("3_u5sy4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kvuet"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kvpfn")
+sources/1 = SubResource("TileSetAtlasSource_dinhu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trtic"]
+texture = ExtResource("4_gee14")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8.020517, 2.9442406, -7.7159424, 2.9442406, -16, -16, -16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.2335606, -16, 16, -16, 16, -8.992935, -1.9784462, -8.992935)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -7.965769, -16, -7.965769)
+
+[sub_resource type="TileSet" id="TileSet_ir15t"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_trtic")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_lnu2h")
+
+[node name="Scenario" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Scenario"]
+offset_right = 481.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 1)
+
+[node name="Tileset" type="TileMap" parent="Scenario"]
+tile_set = SubResource("TileSet_vtaks")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Scenario/Tileset"]
+tile_map_data = PackedByteArray("AAADAAIAAQABAAAAAAAEAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAIAAQABAAAAAAAIAAIAAQABAAAAAAACAAMAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAADAAMAAQABAAAAAAAEAAMAAQABAAAAAAAFAAMAAQABAAAAAAAGAAMAAQABAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAAJAAIAAQABAAAAAAAJAAMAAQABAAAAAAAJAAQAAQABAAAAAAAIAAQAAQABAAAAAAAKAAIAAQABAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAKAAUAAQABAAAAAAACAAIAAQABAAAAAAALAAUAAQABAAAAAAAMAAUAAQABAAAAAAALAAQAAQABAAAAAAAMAAQAAQABAAAAAAALAAMAAQABAAAAAAAMAAMAAQABAAAAAAALAAIAAQABAAAAAAAMAAIAAQABAAAAAAACAAYAAQADAAAAAAADAAYAAQABAAAAAAAEAAYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAALAAYAAQABAAAAAAAMAAYAAQAAAAAAAAAHAAIAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_vtaks")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Scenario/Tileset"]
+tile_map_data = PackedByteArray("AAADAAEAAQAAAAAAAAADAAcAAAAHAAEAAAAEAAEAAAALAAEAAAAEAAcAAAAHAAEAAAAFAAEAAAALAAEAAAAFAAcAAAAHAAEAAAAGAAEAAAALAAEAAAAGAAcAAAAHAAEAAAAHAAEAAAALAAEAAAAHAAcAAAAHAAEAAAAIAAEAAAALAAEAAAAIAAcAAAAHAAEAAAAJAAEAAAALAAEAAAAJAAcAAAAHAAEAAAAKAAEAAAALAAEAAAALAAEAAAALAAEAAAAMAAEAAAALAAEAAAAKAAcAAAAHAAEAAAALAAcAAAAHAAEAAAAMAAcAAAAHAAEAAAAEAAQAAAAHAAEAAAAFAAQAAAAKAAEAAAAFAAYAAAAAAAEAAAABAAIAAAAAAAEAAAABAAQAAAAAAAEAAAABAAYAAAAAAAEAAAACAAEAAAALAAEAAAACAAcAAAAHAAEAAAABAAMAAAAAAAEAAAABAAUAAAAAAAEAAAACAAIAAAACAAEAAAACAAQAAAAHAAEAAAACAAYAAAAEAAEAAAANAAIAAAABAAEAAAANAAYAAAABAAEAAAAMAAIAAAADAAEAAAAMAAYAAAAFAAEAAAANAAMAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAABAAEAAAAAAAEAAAANAAEAAAABAAEAAAADAAAAAAAGAAEAAAAEAAAAAAAEAAEAAAACAAAAAAAFAAEAAAA=")
+tile_set = SubResource("TileSet_kvuet")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="Scenario/Tileset"]
+tile_map_data = PackedByteArray("AAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAAJAAIAAgAAAAAAAAAKAAIAAgAAAAAAAAALAAIAAgABAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgACAAAAAAA=")
+tile_set = SubResource("TileSet_ir15t")
+
+[node name="CaixaBatata" type="Sprite2D" parent="Scenario"]
+position = Vector2(107.00001, 208.00002)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("5_0tnpc")
+
+[node name="CaixaCenoura" type="Sprite2D" parent="Scenario"]
+position = Vector2(83, 182)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("6_vtaks")
+
+[node name="CaixaRabanete" type="Sprite2D" parent="Scenario"]
+position = Vector2(150, 208)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("7_kvpfn")
+
+[node name="SombraCaldeirao" type="Sprite2D" parent="Scenario"]
+position = Vector2(300, 166)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("8_vtaks")
+
+[node name="Cauldron" parent="Scenario/SombraCaldeirao" instance=ExtResource("2_yqjtg")]
+position = Vector2(0, -14)
+scale = Vector2(1.2299999, 1.2299999)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-
-[node name="Cauldron" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(49, 31)
+position = Vector2(121, 98)
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+position = Vector2(240, 135)

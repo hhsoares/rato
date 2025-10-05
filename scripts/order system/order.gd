@@ -9,9 +9,9 @@ var max_time : float          # Initial time for the order
 
 # Map ingredient names to textures
 var ingredient_icons = {
-	"Carrot": preload("res://icon.svg"),
-	"Potato": preload("res://icon.svg"),
-	"Radish": preload("res://icon.svg"),
+	"Carrot": preload("res://assets/ingredients/cenoura.png"),
+	"Potato": preload("res://assets/ingredients/batata.png"),
+	"Radish": preload("res://assets/ingredients/rabanete.png"),
 	"Meat": preload("res://icon.svg")
 }
 
