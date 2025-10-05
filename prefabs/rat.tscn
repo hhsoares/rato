@@ -51,7 +51,7 @@ area = NodePath("../Area2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_xhr13")
 animation = &"running"
-frame_progress = 0.369439
+frame_progress = 0.30586112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2, 4)

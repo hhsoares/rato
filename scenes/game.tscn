@@ -85,9 +85,8 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_trtic")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir15t"]
-radius = 21.0
-height = 82.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
+size = Vector2(32, 96.5)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lnu2h")
@@ -175,11 +174,16 @@ collision_mask = 3
 [node name="Rat" parent="." instance=ExtResource("14_trtic")]
 position = Vector2(380, 223)
 
+[node name="CharacterBody2D" parent="Rat" index="0"]
+speed = 70.0
+wait_time = 5.0
+
 [node name="Area2D" parent="Rat" index="1"]
 position = Vector2(6, -70)
 
 [node name="CollisionShape2D" parent="Rat/Area2D" index="0"]
-shape = SubResource("CapsuleShape2D_ir15t")
+position = Vector2(-12, 10)
+shape = SubResource("RectangleShape2D_trtic")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(240, 135)
