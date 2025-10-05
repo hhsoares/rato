@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0g5d5bmbyeu5"]
+
+[ext_resource type="Texture2D" uid="uid://4luuk52y0kby" path="res://icon.svg" id="2_84s6c"]
+[ext_resource type="PackedScene" uid="uid://cb7mc1c1fck2d" path="res://prefabs/interaction_components/interactable.tscn" id="3_xjjd3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg420"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_84s6c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l33s4"]
+size = Vector2(21.333334, 21.333334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg420"]
+size = Vector2(228, 208)
+
+[node name="IngredientBench" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lg420")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_l33s4")
+
+[node name="IngredientQuantity" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 20.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "3/3"
+horizontal_alignment = 1
+
+[node name="Interactable" parent="." instance=ExtResource("3_xjjd3")]
+interact_name = "dsasdsdsd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_lg420")
